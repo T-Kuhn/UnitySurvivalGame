@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MovingObject 
 {
@@ -8,6 +10,7 @@ public class Player : MovingObject
     public int pointsPerFood = 10;
     public int pointsPerSoda = 20;
     public float restartLevelDelay = 1f;
+    public Text foodText;
 
     private Animator animator;
     private int food;
@@ -48,6 +51,7 @@ public class Player : MovingObject
     protected override void AttemptMove <T> (int xDir, int yDir)
     {
         food--;
+        foodText.text = "Food: " + food;
 
         base.AttemptMove <T> (xDir, yDir);
 
@@ -62,12 +66,14 @@ public class Player : MovingObject
     {
         if(other.tag == "Exit"){
             Invoke("Restart", restartLevelDelay);
-            enabled = false;
+            enabled = false;    //After the Player reached Exit, it get's set to disabled.   
         }else if(other.tag == "Food"){
             food += pointsPerFood;
+            foodText.text = "+" + pointsPerFood + " Food: " + food; 
             other.gameObject.SetActive(false);
         }else if(other.tag == "Soda"){
             food += pointsPerSoda;
+            foodText.text = "+" + pointsPerSoda + " Food: " + food;
             other.gameObject.SetActive(false);
         }
     }
@@ -81,13 +87,14 @@ public class Player : MovingObject
 
     private void Restart()
     {
-        Application.LoadLevel(Application.loadedLevel);    
+        SceneManager.LoadScene("Main"); //Application.LoadLevel(Application.loadedLevel);    
     }
 
     public void LoseFood(int loss)
     {
         animator.SetTrigger("playerHit");
         food -= loss;
+        foodText.text = "-" + loss + " Food: " + food;
         CheckIfGameOver();
     }
 

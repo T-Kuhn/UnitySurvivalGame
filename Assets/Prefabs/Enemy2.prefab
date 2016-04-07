@@ -12,6 +12,7 @@ GameObject:
   - 95: {fileID: 9581896}
   - 61: {fileID: 6106344}
   - 50: {fileID: 5042540}
+  - 114: {fileID: 11489188}
   m_Layer: 8
   m_Name: Enemy2
   m_TagString: Enemy
@@ -79,6 +80,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11489188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34dac44a7d8c40543a748fe896b366e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveTime: 0.1
+  blockingLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  playerDamage: 20
 --- !u!212 &21278608
 SpriteRenderer:
   m_ObjectHideFlags: 1

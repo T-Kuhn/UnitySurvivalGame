@@ -40,7 +40,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7ac7d65e258f54e98c048f3562ad8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelStartDelay: 2
+  turnDelay: 0.1
   boardScript: {fileID: 0}
+  playerFoodPoints: 100
+  playersTurn: 1
 --- !u!114 &11476768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,6 +85,7 @@ MonoBehaviour:
   - {fileID: 126016, guid: de83a69fc7a8da74ebe99e633e787d71, type: 2}
   foodTiles:
   - {fileID: 128362, guid: 0581264a01153184ab61c77c96c1598b, type: 2}
+  - {fileID: 141430, guid: c7fb576c62c237b4ea3ca344998c2f24, type: 2}
   enemyTiles:
   - {fileID: 174616, guid: 1f4c0d01484fad74baebc48615eaf4c0, type: 2}
   - {fileID: 110178, guid: aaedfde34c40ed349ba2bdbf89e5edb5, type: 2}
